@@ -10,7 +10,7 @@ namespace Text_Adventure_Winforms
     {
         protected WindowManager() { }
 
-        private MainForm m_MainWindow;
+        private MainForm m_MainWindow; 
 
         public void RegisterWindow(MainForm mainWindow)
         {
@@ -38,6 +38,5 @@ namespace Text_Adventure_Winforms
         {
             m_MainWindow.ToggleTick();
         }
-
     }
 }

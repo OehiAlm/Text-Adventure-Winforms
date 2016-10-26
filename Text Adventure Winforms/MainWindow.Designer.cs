@@ -91,7 +91,7 @@
             this.Controls.Add(this.KindleButton);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "This is part 0";
+            this.Text = "Uninitialized";
             this.ResumeLayout(false);
             this.PerformLayout();
 

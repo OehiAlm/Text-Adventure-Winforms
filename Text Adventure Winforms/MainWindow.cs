@@ -27,7 +27,7 @@ namespace Text_Adventure_Winforms
             ControlFlow Start = new ControlFlow();
             Start.StartControlFlow();
         }
-        
+
         Firestate firestate = new Firestate();      // Creating a local copy of Firestate to use all logic & data from this class
 
         //
@@ -36,8 +36,8 @@ namespace Text_Adventure_Winforms
 
         void CheckButtonstate(Button button, Button counterpart)
         {
-            if (firestate.intFirestate == 0 || firestate.intFirestate == 5)     //Das stört mich am meisten
-                ToggleButtonStates(button, counterpart, true);                  //Den counterpart muss ich durchreichen, damit der andere Button wieder enabled wird
+            if (firestate.intFirestate == ETextsLowerBound() || firestate.intFirestate == ETextsUpperBound())
+                ToggleButtonStates(button, counterpart, true);   //Den counterpart muss ich durchreichen, damit der andere Button wieder enabled wird
 
             else
                 ToggleButtonStates(button, counterpart, false);
@@ -78,6 +78,15 @@ namespace Text_Adventure_Winforms
                 AdventureTick.Start();
         }
 
+        public int ETextsUpperBound()
+        {
+            return Enum.GetValues(typeof(ETexts)).Cast<int>().Max();
+        }
+
+        public int ETextsLowerBound()
+        {
+            return Enum.GetValues(typeof(ETexts)).Cast<int>().Min();
+        }
 
         //
         //  Element Manipulation
@@ -108,21 +117,21 @@ namespace Text_Adventure_Winforms
 
         private void StandardTick_Tick(object sender, EventArgs e)
         {
-            switch (numberofTicks)
-            {
-                case 1 :  //Keine Ahnung, warum der durch die breaks durchfällt?!
-                    ChangeWindowSize(this.Width + 50, this.Height);
-                    break;
+            //switch (numberofTicks)
+            //{
+            //    case 1 :  //Keine Ahnung, warum der durch die breaks durchfällt?!
+            //        ChangeWindowSize(this.Width + 50, this.Height);
+            //        break;
 
-                case 2 :
-                    //Todo
-                    break;
+            //    case 2 :
+            //        //Todo
+            //        break;
 
-                default: // well, this doesn't work right now
-                    OutputStream.ForeColor = Color.Orchid;
-                    OutputStream.AppendText("\n" + "Out of handled AdventureTick cases!!!" + "\n");
-                    break;
-            }
+            //    default: // well, this doesn't work right now
+            //        OutputStream.ForeColor = Color.Orchid;
+            //        OutputStream.AppendText("\n" + "Out of handled AdventureTick cases!!!" + "\n");
+            //        break;
+            //}
 
             numberofTicks++;
         }
