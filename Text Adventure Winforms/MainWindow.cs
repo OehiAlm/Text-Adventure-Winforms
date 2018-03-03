@@ -28,6 +28,7 @@ namespace Text_Adventure_Winforms
             Start.StartControlFlow();
         }
 
+        //Outside outside;
         Firestate firestate = new Firestate();      // Creating a local copy of Firestate to use all logic & data from this class
 
         //
@@ -80,12 +81,12 @@ namespace Text_Adventure_Winforms
 
         public int ETextsUpperBound()
         {
-            return Enum.GetValues(typeof(ETexts)).Cast<int>().Max();
+            return Enum.GetValues(typeof(EFireTexts)).Cast<int>().Max();
         }
 
         public int ETextsLowerBound()
         {
-            return Enum.GetValues(typeof(ETexts)).Cast<int>().Min();
+            return Enum.GetValues(typeof(EFireTexts)).Cast<int>().Min();
         }
 
         //
@@ -105,7 +106,8 @@ namespace Text_Adventure_Winforms
         {
             firestate.KindleFire();
             OutputStream.AppendText(firestate.strFirestate + "\n");
-            CheckButtonstate(KindleButton,ExtinguishButton);
+            CheckButtonstate(KindleButton, ExtinguishButton);
+            UpdateOutside(firestate);
         }
 
         private void ExtinguishButton_Click(object sender, EventArgs e)
@@ -113,27 +115,13 @@ namespace Text_Adventure_Winforms
             firestate.ExtinguishFire();
             OutputStream.AppendText(firestate.strFirestate + "\n");
             CheckButtonstate(ExtinguishButton,KindleButton);
+            UpdateOutside(firestate);
         }
 
         private void StandardTick_Tick(object sender, EventArgs e)
         {
-            //switch (numberofTicks)
-            //{
-            //    case 1 :  //Keine Ahnung, warum der durch die breaks durchfällt?!
-            //        ChangeWindowSize(this.Width + 50, this.Height);
-            //        break;
-
-            //    case 2 :
-            //        //Todo
-            //        break;
-
-            //    default: // well, this doesn't work right now
-            //        OutputStream.ForeColor = Color.Orchid;
-            //        OutputStream.AppendText("\n" + "Out of handled AdventureTick cases!!!" + "\n");
-            //        break;
-            //}
-
-            numberofTicks++;
+            
+            //numberofTicks++;
         }
     }
 }

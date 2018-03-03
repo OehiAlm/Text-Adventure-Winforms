@@ -34,6 +34,8 @@
             this.FireControlsLabel = new System.Windows.Forms.Label();
             this.ExtinguishButton = new System.Windows.Forms.Button();
             this.AdventureTick = new System.Windows.Forms.Timer(this.components);
+            this.worldWindow = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.worldWindow)).BeginInit();
             this.SuspendLayout();
             // 
             // KindleButton
@@ -82,16 +84,26 @@
             this.AdventureTick.Interval = 2500;
             this.AdventureTick.Tick += new System.EventHandler(this.StandardTick_Tick);
             // 
+            // worldWindow
+            // 
+            this.worldWindow.Location = new System.Drawing.Point(438, 14);
+            this.worldWindow.Name = "worldWindow";
+            this.worldWindow.Size = new System.Drawing.Size(278, 170);
+            this.worldWindow.TabIndex = 5;
+            this.worldWindow.TabStop = false;
+            // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(484, 211);
+            this.ClientSize = new System.Drawing.Size(742, 200);
+            this.Controls.Add(this.worldWindow);
             this.Controls.Add(this.ExtinguishButton);
             this.Controls.Add(this.FireControlsLabel);
             this.Controls.Add(this.OutputStream);
             this.Controls.Add(this.KindleButton);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Uninitialized";
+            this.Text = "Not being updated right now";
+            ((System.ComponentModel.ISupportInitialize)(this.worldWindow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,6 +115,7 @@
         public System.Windows.Forms.Button KindleButton;
         private System.Windows.Forms.TextBox OutputStream;
         private System.Windows.Forms.Timer AdventureTick;
+        private System.Windows.Forms.PictureBox worldWindow;
     }
 }
 

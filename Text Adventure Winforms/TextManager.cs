@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Text_Adventure_Winforms
 {
-    public enum ETexts
+    public enum EFireTexts
     {
         dark,
         flickering,
@@ -19,13 +19,13 @@ namespace Text_Adventure_Winforms
     {
         protected TextManager(){}
         
-        public Dictionary<ETexts, string> allTexts = new Dictionary<ETexts, string>()
+        public Dictionary<EFireTexts, string> allTexts = new Dictionary<EFireTexts, string>()
         {
-            {ETexts.dark, "It's dark"},
-            {ETexts.flickering, "The fire is flickering"},
-            {ETexts.lit, "It's burning brightly"},
-            {ETexts.burning, "It's quite warm and fuzzy"},
-            {ETexts.going_nuts, "Hell broke loose"},
+            {EFireTexts.dark, "It's dark"},
+            {EFireTexts.flickering, "The fire is flickering"},
+            {EFireTexts.lit, "It's burning brightly"},
+            {EFireTexts.burning, "It's quite warm and fuzzy"},
+            {EFireTexts.going_nuts, "Hell broke loose"},
         };
     }
 }

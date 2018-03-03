@@ -22,7 +22,7 @@ namespace Text_Adventure_Winforms
                     intFirestate++; ;
                     break;
             }
-            strFirestate = TextManager.Get().allTexts[((ETexts)intFirestate)] + "\n";
+            strFirestate = TextManager.Get().allTexts[((EFireTexts)intFirestate)] + "\n";
         }
 
         public void ExtinguishFire()
@@ -36,7 +36,7 @@ namespace Text_Adventure_Winforms
                     intFirestate--;
                     break;
             }
-            strFirestate = TextManager.Get().allTexts[((ETexts)intFirestate)] + "\n";
+            strFirestate = TextManager.Get().allTexts[((EFireTexts)intFirestate)] + "\n";
         }
     }
 }
