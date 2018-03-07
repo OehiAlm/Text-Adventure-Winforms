@@ -6,13 +6,21 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
 
+enum EFirstTimeWorldEvents : byte
+{
+    ROOM_PARTIALLY_LIT,
+    ROOM_COMPLETELY_LIT,
+    DOOR_OPENS,
+}
+
 namespace Text_Adventure_Winforms
 {
     public partial class MainForm
     {
         public struct Outside
         {
-            public Color backgroundcolor;
+            Color backgroundcolor;
+            Object[] objects;
         }
 
         void UpdateOutside(Firestate firestate)

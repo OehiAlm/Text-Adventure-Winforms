@@ -120,7 +120,7 @@ namespace Text_Adventure_Winforms
 
         private void StandardTick_Tick(object sender, EventArgs e)
         {
-            
+            OutputStream.AppendText("Tick\n");
             //numberofTicks++;
         }
     }
